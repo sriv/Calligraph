@@ -1,0 +1,1 @@
+var CKEDITOR_BASEPATH = '/javascripts/calligraph/lib/ckeditor/';

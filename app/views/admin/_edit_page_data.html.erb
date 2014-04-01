@@ -1,0 +1,10 @@
+<%= semantic_form_for resource, :url => admin_content_path(resource.id), html: {id: "edit_page_data"} do |f| %>
+    <%= f.input :title %>
+    <%= f.input :path %>
+    <%= f.input :data, :as => :hidden %>
+    <%= f.submit :value => 'Update Content' %>
+<% end %>
+<div class="devices">
+	<a class="mobile fa fa-mobile"></a>
+	<a class="desktop fa fa-desktop"></a>
+</div>
