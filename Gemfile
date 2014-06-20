@@ -13,3 +13,9 @@ gemspec
 # To use debugger
 # gem 'debugger'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise', '~> 3.2'
+
+group :test do
+  gem 'simplecov', :require => false
+  gem 'factory_girl_rails'
+end

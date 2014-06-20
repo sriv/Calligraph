@@ -12,7 +12,7 @@ module Calligraph
     def markup(locale)
       data_json = JSON.parse(data)
       data_json = data_json[I18n.locale.to_s].nil? ? data_json : data_json[I18n.locale.to_s]
-      Mustache.render(content_template.markup, data_json) #case when content is rendered based on html template and not rails action based
+      Mustache.render(content_template.markup, data_json) 
     end
 
     protected
