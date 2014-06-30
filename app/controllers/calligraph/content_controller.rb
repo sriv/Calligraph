@@ -18,9 +18,9 @@ module Calligraph
             stylesheet_tag = stylesheet_exists?(template_stylesheet) ? "<%= stylesheet_link_tag \"#{template_stylesheet}\", media: \"all\" %>" : ""
             javascript_tag = "<%= javascript_include_tag \"calligraph/inline_editor\", \"calligraph/picoModal\" %>"
             content_html = "#{javascript_tag}#{stylesheet_tag}#{content.markup(I18n.locale)}"
-            render :inline => content_html, :layout => "layouts/application", content_type: "text/html; charset=utf-8"
+            render inline: content_html, layout: "layouts/application", content_type: "text/html; charset=utf-8"
           else
-            render :nothing => true
+            render nothing: true
           end
         end
       end
@@ -29,7 +29,7 @@ module Calligraph
     def fetch_templates
       template_type = params[:template_type]
       template_class = template_type.constantize
-      render :json => template_class.select(:id, :title)
+      render json: template_class.select(:id, :title)
     end
   end
 end

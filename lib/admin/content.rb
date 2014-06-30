@@ -29,7 +29,7 @@ ActiveAdmin.register Calligraph::Content, as: "Content" do
 
   filter :title
 
-  sidebar :data, :only => :show do
-    render :partial => "admin/edit_page_data", :locals => { :resource => resource }
+  sidebar :data, only: :show do
+    render partial: "admin/edit_page_data", locals: { resource: resource }
   end
 end

@@ -1,4 +1,4 @@
-require "mustache"
+require 'mustache'
 module Calligraph
   class Content < ActiveRecord::Base
     belongs_to :content_template, polymorphic: true
@@ -21,7 +21,7 @@ module Calligraph
       begin
         !!JSON.parse(data)
       rescue
-        errors[:data] << "Invalid JSON"
+        errors[:data] << 'Invalid JSON'
         false
       end
     end
