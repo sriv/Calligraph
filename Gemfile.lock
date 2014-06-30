@@ -168,7 +168,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   calligraph!
-  devise (~> 3.2)
+  devise
   factory_girl_rails
   simplecov
   sqlite3
