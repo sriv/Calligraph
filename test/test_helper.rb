@@ -1,7 +1,8 @@
 require 'simplecov'
+
 SimpleCov.start do
   add_filter 'test'
-  command_name 'Mintest'
+  command_name 'Minitest'
 end
 
 # Configure Rails Environment
@@ -30,6 +31,19 @@ end
 
 class ActionDispatch::Routing::RouteSet
   def default_url_options(options={})
-    { :host => "test.host" }.merge options
+    { host: "test.host" }.merge options
+  end
+end
+
+#Database Cleaner
+DatabaseCleaner.strategy = :transaction
+
+class MiniTest::Spec
+  before :each do
+    DatabaseCleaner.start
+  end
+
+  after :each do
+    DatabaseCleaner.clean
   end
 end
