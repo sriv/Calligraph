@@ -10,3 +10,7 @@ group :test do
   gem 'simplecov', :require => false
   gem 'factory_girl_rails'
 end
+
+group :development do
+  gem 'unicorn'
+end

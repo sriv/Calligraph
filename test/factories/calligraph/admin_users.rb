@@ -5,6 +5,5 @@ FactoryGirl.define do
     sequence(:email) {|n| "admin#{n}@calligraph.com"}
     password "password"
     password_confirmation "password"
-    role "superadmin"
   end
 end

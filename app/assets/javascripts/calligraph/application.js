@@ -12,4 +12,5 @@
 //
 //= require calligraph/lib/jquery-2.1.0.min
 //= require calligraph/lib/ckeditor/ckeditor
-//= require_tree .
+//= require calligraph/lib/ckeditor/adapters/jquery
+//= require_directory .
