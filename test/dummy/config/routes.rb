@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   mount Calligraph::Engine => "/"
 
   devise_for :calligraph_admin_users, {
-    :class_name => "Calligraph::AdminUser",
+    class_name: "Calligraph::AdminUser",
     path_names: {sign_in: "login", sign_out: "logout"},
-    :path => "/admin",
+    path: "/admin",
     module: :devise
   }
 
