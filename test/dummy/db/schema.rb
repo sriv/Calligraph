@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140516065108) do
+ActiveRecord::Schema.define(version: 20140630112615) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,8 +46,23 @@ ActiveRecord::Schema.define(version: 20140516065108) do
   add_index "calligraph_admin_users", ["email"], name: "index_calligraph_admin_users_on_email", unique: true
   add_index "calligraph_admin_users", ["reset_password_token"], name: "index_calligraph_admin_users_on_reset_password_token", unique: true
 
-# Could not dump table "calligraph_contents" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "calligraph_contents", force: true do |t|
+    t.string   "title"
+    t.text     "data"
+    t.string   "path"
+    t.integer  "content_template_id"
+    t.string   "content_template_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "calligraph_meta_tags", force: true do |t|
+    t.string   "name"
+    t.string   "value"
+    t.integer  "content_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "calligraph_templates", force: true do |t|
     t.string   "title"

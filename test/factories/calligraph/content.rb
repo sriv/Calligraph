@@ -15,6 +15,6 @@ FactoryGirl.define do
     data
     content_template_id { association(:template).id }
     content_template_type "Calligraph::Template"
-    meta_tags {{"og:title" => "Page Title", "og:description" => "Description of content on page"}}
+    meta_tags_attributes { [{name: 'og:title', value: 'Title'}, {name: 'og:url', value: 'www.example.com'}] }
   end
 end
