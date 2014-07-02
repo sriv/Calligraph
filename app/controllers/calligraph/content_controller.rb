@@ -1,15 +1,13 @@
-require_dependency "calligraph/application_controller"
-
 module Calligraph
-
   class ContentController < ApplicationController
     include UrlHelper
     include FileHelper
+    include ContentHelper
 
     def show
       path = params[:path]
       content = Content.find_by(path: "/#{path}")
-      if content.nil? || compare_to_hash(content.path, params[:token])
+      if content.nil? || (params[:token].present? && !is_token_valid?(content.path, params[:token]))
         error_404
       else
         if stale?(last_modified: content.updated_at)

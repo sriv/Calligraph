@@ -4,8 +4,8 @@ module Calligraph
       Digest::SHA1.hexdigest("#{string}#{SECRET_KEY}")
     end
 
-    def compare_to_hash string, token
-      Digest::SHA1.hexdigest("#{string}#{SECRET_KEY}") == token
+    def is_token_valid? string, token
+      generate_hash(string) == token
     end
   end
 end

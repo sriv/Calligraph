@@ -170,7 +170,7 @@ ActiveAdmin.setup do |config|
   #
   # To load a javascript file:
   config.register_javascript 'calligraph/make_content_editable.js'
-  
+  config.register_javascript 'calligraph/contents.js'
 
   # == CSV options
   #
