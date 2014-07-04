@@ -24,7 +24,7 @@ ActiveAdmin.register Calligraph::Content, as: "Content" do
 
   show do
     path = "#{resource.path}?token=#{generate_hash(resource.path)}"
-    render inline: "<iframe src=\"<%= path %>\" id='content_preview'></iframe>", locals: {path: path}
+    render partial: 'admin/preview_content', locals: {path: path}
   end
 
   filter :title
