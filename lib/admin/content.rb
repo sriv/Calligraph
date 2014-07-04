@@ -7,7 +7,7 @@ ActiveAdmin.register Calligraph::Content, as: "Content" do
     column :title
     column :created_at
     column :path
-    default_actions
+    actions
   end
 
   form do |f|

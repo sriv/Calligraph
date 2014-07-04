@@ -5,7 +5,7 @@ ActiveAdmin.register Calligraph::Template, as: "Template" do
   index do
     column :title
     column :created_at
-    default_actions
+    actions
   end
 
   filter :title

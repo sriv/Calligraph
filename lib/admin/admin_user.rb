@@ -6,7 +6,7 @@ ActiveAdmin.register Calligraph::AdminUser do
     column :current_sign_in_at
     column :last_sign_in_at
     column :sign_in_count
-    default_actions
+    actions
   end
 
   filter :email
